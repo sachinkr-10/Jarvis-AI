@@ -15,9 +15,9 @@ new=2
 
 engine=pyttsx3.init('sapi5')
 emailDictonary={
-    "shilpi":"shilpis433@gmail.com",
+    "shilpi":"",
     "sachin":"sachinkumar.kumar28@gmail.com",
-    "shivam":"shivamjha377@gmail.com"
+    "shivam":""
 }
 voices=engine.getProperty('voices')
 print(voices)
@@ -32,12 +32,12 @@ def speak(audio):
 
 
 def sendMessage():
-    account_sid = 'ACec0af248042e9961878fa976df038da5'
-    auth_token = '5fa55bba781902fe130f5353abbb2c87'
+    account_sid = ''
+    auth_token = ''
     client = Client(account_sid, auth_token)
     #speak("whom do u want to send message")
 
-    message = client.messages .create(body = takeCommand(), from_='+13205006087', to ='+918076710639') 
+    message = client.messages .create(body = takeCommand(), from_='', to ='+') 
     print(message.sid) 
   
 
@@ -83,7 +83,7 @@ def sendEmail(to,content):
     server.starttls() 
       
     # Enable low security in gmail 
-    server.login('sachinkumar.kumar28@gmail.com','kumarsachinmeandi') 
+    server.login('sachinkumar.kumar28@gmail.com','') 
     server.sendmail('sachinkumar.kumar28@gmail.com', to, content) 
     server.close() 
   
@@ -191,7 +191,7 @@ if __name__ == "__main__":
               
             # Use the same API key  
             # that we have generated earlier 
-            client = wolframalpha.Client("7R2PP4-QPH59YJJ8K") 
+            client = wolframalpha.Client("") 
             query=query.replace("what is","") or query.replace("who is","")
             res = client.query(query) 
               
